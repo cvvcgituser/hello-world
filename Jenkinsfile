@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    tools {
+        maven 'vishnu'
+    }
 
     stages {
         stage ("build") {
             steps {
-                echo "building the application"
+                sh "mvn clean install package"
             }
         }
         stage ("test") {
@@ -14,7 +17,7 @@ pipeline {
         }
         stage ("deploy") {
             steps { 
-                echo "deploying the application"
+                echo "deploying the apllication"
             }
         }
     }
