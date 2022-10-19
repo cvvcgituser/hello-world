@@ -1,4 +1,7 @@
-# Pull base image 
-From tomcat-9.0.68 
+From centos:latest
+RUN yum install java -y
+RUN yum install -y maven
+RUN Mkdir build
+COPY .* /build
 
-COPY webapp.war /home/ec2-user/tomcat/webapps
+RUN mvn clean install package
