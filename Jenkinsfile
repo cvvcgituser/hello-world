@@ -12,7 +12,7 @@ pipeline {
         }
         stage ("test") {
             steps {
-                echo "testing the application"
+                sh "docker build -t cvvcacs5658/test_repo:webapp-latest ."
             }
         }
         stage ("deploy") {
