@@ -4,7 +4,7 @@ pipeline {
         maven 'vishnu'
     }
     environment {
-    DOCKERHUB_CREDENTIALS = credentials(dockerhub_credentials)
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub_credentials')
     }
 
     stages {
