@@ -13,7 +13,7 @@ pipeline {
                 sh "mvn clean install package"
             }
         }
-        stage ("test") {
+        stage ("publish") {
             steps {
                 sh "docker build -t cvvcacs5658/test_repo:$BUILD_NUMBER ."
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
