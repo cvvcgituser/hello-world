@@ -20,12 +20,5 @@ pipeline {
                 sh 'docker push cvvcacs5658/test_repo:$BUILD_NUMBER'
             }
         }
-        stage ("deploy") {
-            steps { 
-                sshagent(['deploy_user']) {
-                    sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@18.220.0.59:/home/ec2-user/tomcat/webapps"
-                }
-            }
-        }
     }
 }
