@@ -1,3 +1,3 @@
 FROM tomcat
 RUN pwd
-COPY /webapp/target/webapp.war /opt/tomcat/webapps
+COPY /webapp/target/webapp.war /usr/local/tomcat/webapps
